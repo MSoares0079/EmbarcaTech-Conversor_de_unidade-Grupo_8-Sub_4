@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Funções/comprimento.c"
+
+#include "funcoes/comprimento.c"
+#include "funcoes/tempo.c"
 
 void lista_conversao(){//Lista com todos os tipos de conversão de medidas realizadas pelo algoritmo
     printf("Selecione o tipo de conversão, escolha entre:");
     printf("\nComprimento \t(1)");
+    printf("\nTempo \t(8)");
     printf("\n");    
 }
 
@@ -23,6 +26,11 @@ int main(){
         if (strcmp(escolha_conversao,"COMPRIMENTO")==0 || strcmp(escolha_conversao,"1")==0)
         {
             valor_convertido=comprimento();
+            escolha_invalida = 0;
+        }
+        else if (strcmp(escolha_conversao,"TEMPO")==0 || strcmp(escolha_conversao,"8")==0)
+        {
+            valor_convertido=tempo();
             escolha_invalida = 0;
         }
         else{
