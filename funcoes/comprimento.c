@@ -5,10 +5,10 @@
 
 void lista_conversao_comprimento(){
     printf("\nEscolha entre:");
-    printf("\nMetro \t(1)");
-    printf("\nCentimetro \t(2)");
-    printf("\nMilimetro \t(3)");
-    printf("\n");    
+    printf("\n1. Metro ");
+    printf("\n2. Centimetro");
+    printf("\n3. Milimetro");
+    printf("\nDigite sua escolha(1-3): ");
 }
 int escolha_comprimento(char escolha[25]){
     if (strcmp(escolha,"METRO")==0 || strcmp(escolha,"1")==0)
@@ -33,7 +33,7 @@ double comprimento(){
     char escolha_de[25];
     int escolha_invalida, de, para;
     double valor_para_converter;
-    printf("Qual a medida a ser convertida:");
+    printf("Qual o valor da medida a ser convertida:");
     scanf("%lf", &valor_para_converter);
     do{
         printf("\nConvertendo de:");

@@ -8,7 +8,7 @@
 void lista_conversao(){//Lista com todos os tipos de conversão de medidas realizadas pelo algoritmo
     printf("Selecione o tipo de conversão, escolha entre:");
     printf("\nComprimento \t(1)");
-    printf("\nTempo \t(8)");
+    printf("\nTempo \t\t(8)");
     printf("\n");    
 }
 
