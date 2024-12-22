@@ -24,7 +24,7 @@ int escolha_comprimento(char escolha[25]){
         return -3;
     }
     else{ 
-        printf("\nConvers„o inv·lida");
+        printf("\nConvers√£o inv√°lida");
         return -1;
     }
 }
