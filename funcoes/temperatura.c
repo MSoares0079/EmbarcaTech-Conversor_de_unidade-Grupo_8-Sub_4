@@ -1,62 +1,95 @@
 #include <stdio.h>
 
-void paraCelsius(float celsius) {
-    float fahrenheit = (celsius * 9 / 5) + 32;
-    float kelvin = celsius + 273.15;
-
-    printf("Celsius para Fahrenheit: %.1f\n", fahrenheit);
-    printf("Celsius para Kelvin: %.1f\n", kelvin);
+float celsiusToFahrenheit(){
+    float celsius, fahrenheit;
+    printf("Informe a temperatura em Celsius: ");
+    scanf("%f", &celsius);
+    fahrenheit = (celsius * 9 / 5) + 32;
+    return fahrenheit;
 }
 
-void paraFahrenheit(float fahrenheit) {
-    float celsius = (fahrenheit - 32) * 5 / 9;
-    float kelvin = (fahrenheit - 32) * 5 / 9 + 273.15;
-
-    printf("Fahrenheit para Celsius: %.1f\n", celsius);
-    printf("Fahrenheit para Kelvin: %.1f\n", kelvin);
+float celsiusToKelvin(){
+    float celsius, kelvin;
+    printf("Informe a temperatura em Celsius: ");
+    scanf("%f", &celsius);
+    kelvin = celsius + 273.15;
+    return kelvin;
 }
 
-void paraKelvin(float kelvin) {
-    float celsius = kelvin - 273.15;
-    float fahrenheit = (kelvin - 273.15) * 9 / 5 + 32;
-
-    printf("Kelvin para Celsius: %.1f\n", celsius);
-    printf("Kelvin para Fahrenheit: %.1f\n", fahrenheit);
+float fahrenheitToCelsius(){
+    float fahrenheit, celsius;
+    printf("Informe a temperatura em Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+    celsius = (fahrenheit - 32) * 5 / 9;
+    return celsius;
 }
 
-void executarConversao() {
+float fahrenheitToKelvin(){
+    float fahrenheit, kelvin;
+    printf("Informe a temperatura em Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+    kelvin = (fahrenheit - 32) * 5 / 9 + 273.15;
+    return kelvin;
+}
+
+float kelvinToCelsius(){
+    float kelvin, celsius;
+    printf("Informe a temperatura em Kelvin: ");
+    scanf("%f", &kelvin);
+    celsius = kelvin - 273.15;
+    return celsius;
+}
+
+float kelvinToFahrenheit(){
+    float kelvin, fahrenheit;
+    printf("Informe a temperatura em Kelvin: ");
+    scanf("%f", &kelvin);
+    fahrenheit = (kelvin - 273.15) * 9 / 5 + 32;
+    return fahrenheit;
+}
+
+float temperatura() {
     int escolha;
-    float temperatura;
+    float resultado;
 
     do {
         printf("\nConversor de temperatura\n");
         printf("Escolha uma opção:\n");
-        printf("1 - Converter de Celsius para Fahrenheit e Kelvin\n");
-        printf("2 - Converter de Fahrenheit para Celsius e Kelvin\n");
-        printf("3 - Converter de Kelvin para Celsius e Fahrenheit\n");
-        printf("4 - Sair\n");
+        printf("1 - Converter de Celsius para Fahrenheit\n");
+        printf("2 - Converter de Celsius para Kelvin\n");
+        printf("3 - Converter de Fahrenheit para Celsius\n");
+        printf("4 - Converter de Fahrenheit para Kelvin\n");
+        printf("5 - Converter de Kelvin para Celsius\n");
+        printf("6 - Converter de Kelvin para Fahrenheit\n");
+        printf("7 - Sair\n");
         scanf("%d", &escolha);
 
         switch (escolha) {
             case 1:
-                printf("Informe a temperatura em Celsius: ");
-                scanf("%f", &temperatura);
-                paraCelsius(temperatura);
+                resultado = celsiusToFahrenheit();
                 break;
 
             case 2:
-                printf("Informe a temperatura em Fahrenheit: ");
-                scanf("%f", &temperatura);
-                paraFahrenheit(temperatura);
+                resultado = celsiusToKelvin();
                 break;
 
             case 3:
-                printf("Informe a temperatura em Kelvin: ");
-                scanf("%f", &temperatura);
-                paraKelvin(temperatura);
+                resultado = fahrenheitToCelsius();
                 break;
 
             case 4:
+                resultado = fahrenheitToKelvin();
+                break;
+            
+            case 5:
+                resultado = kelvinToCelsius();
+                break;
+
+            case 6:
+                resultado = kelvinToFahrenheit();
+                break;
+
+            case 7:
                 printf("Saindo do programa...\n");
                 break;
 
@@ -65,10 +98,8 @@ void executarConversao() {
                 break;
         }
 
-    } while (escolha != 4); 
-}
+    } while (escolha != 7); 
 
-int main() {
-    executarConversao();
     return 0;
+
 }
