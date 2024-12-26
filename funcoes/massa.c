@@ -1,21 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void kgtog();
-void kgtoT();
-void gtoKg();
-void gtoT();
-void TtoKg();
-void Ttog();
 void menu();
+double kgtog();
+double kgtoT();
+double gtoKg();
+double gtoT();
+double TtoKg();
+double Ttog();
 
-int main(){
-
-    while (1){
-        menu();
-    }
-    return 0;
-}
 
 void menu (){
 int opc;
@@ -33,22 +26,28 @@ printf("Qual numero corresponde ao servico desejado: ");
 scanf("%d", &opc);
 
 switch (opc){
-    case 1: kgtog();
+    case 1: 
+    printf("Resultado: %.2f g\n", kgtog());
     system("pause");
       break;
-    case 2: kgtoT();
+    case 2: 
+    printf("Resultado: %.2f T\n", kgtoT());
     system("pause");
       break;
-    case 3: gtoKg();
+    case 3: 
+    printf("Resultado: %.2f Kg\n", gtoKg());
     system("pause");
       break;
-    case 4: gtoT();
+    case 4: 
+    printf("Resultado: %.2f T\n", gtoT());
     system("pause");
       break;
-    case 5: TtoKg();
+    case 5: 
+    printf("Resultado: %.2f Kg\n", TtoKg());
     system("pause");
       break; 
-    case 6: Ttog();
+    case 6: 
+    printf("Resultado: %.2f g\n", Ttog());
     system("pause");
       break;
     case 0:
@@ -61,50 +60,50 @@ switch (opc){
 }
 }
 
-void kgtog (){
+double kgtog (){
 float n1,calculo;
 printf("Digite a quantidade de Kg: ");
 scanf("%f", &n1 );
 calculo = n1*1000;
-printf("%.2f Kg equivale a: %.2f g\n", n1, calculo);
+return calculo;
 }
 
-void kgtoT (){
+double kgtoT (){
 float n1,calculo;
 printf("Digite a quantidade de Kg: ");
 scanf("%f", &n1 );
 calculo = n1/1000;
-printf("%.2f Kg equivale a: %.2f T\n", n1, calculo);
+return calculo;
 }
 
-void gtoKg (){
+double gtoKg (){
 float n1,calculo;
 printf("Digite a quantidade de gramas: ");
 scanf("%f", &n1 );
 calculo = n1/1000;
-printf("%.2f g equivale a: %.2f Kg\n", n1, calculo);
+return calculo;
 }
 
-void gtoT (){
+double gtoT (){
 float n1,calculo;
 printf("Digite a quantidade de gramas: ");
 scanf("%f", &n1 );
 calculo = n1/1000000;
-printf("%.2f g equivale a: %.2f T\n", n1, calculo);
+return calculo;
 }
 
-void TtoKg (){
+double TtoKg (){
 float n1,calculo;
 printf("Digite a quantidade de Toneladas: ");
 scanf("%f", &n1 );
 calculo = n1*1000;
-printf("%.2f T equivale a: %.2f Kg\n", n1, calculo);
+return calculo;
 }
 
-void Ttog (){
+double Ttog (){
 float n1,calculo;
 printf("Digite a quantidade de Toneladas: ");
 scanf("%f", &n1 );
 calculo = n1*1000000;
-printf("%.2f T equivale a: %.2f g\n", n1, calculo);
+return calculo;
 }
