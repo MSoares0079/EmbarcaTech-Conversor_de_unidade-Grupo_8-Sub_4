@@ -4,11 +4,11 @@
 void showMenu() {
 	printf("Bem-vindo ao Conversor de Velocidade!\n");
 	printf("Escolha a unidade de entrada:\n");
-	printf("1. km/h (quilC4metros por hora)\n");
+	printf("1. km/h (quilômetros por hora)\n");
 	printf("2. m/s (metros por segundo)\n");
 	printf("3. mph (milhas por hora)\n");
-	printf("4. ft/s (pC)s por segundo)\n");
-	printf("Escolha uma opC'C#o: ");
+	printf("4. ft/s (pés por segundo)\n");
+	printf("Escolha uma opção: ");
 }
 
 double convertSpeed(double value, int inputUnit, int outputUnit) {
@@ -18,9 +18,9 @@ double convertSpeed(double value, int inputUnit, int outputUnit) {
 	return kmhValue * conversionFactors[outputUnit - 1];
 }
 
-int main() {
+double velocidade() {
 	int inputUnit, outputUnit;
-	double value, result;
+	double value, resultado;
 	char continueProgram;
 
 	do {
@@ -35,26 +35,26 @@ int main() {
 		printf("Digite o valor da velocidade: ");
 		scanf("%lf", &value);
 
-		printf("Escolha a unidade de saC-da:\n");
-		printf("1. km/h (quilC4metros por hora)\n");
+		printf("Escolha a unidade de saída:\n");
+		printf("1. km/h (quilômetros por hora)\n");
 		printf("2. m/s (metros por segundo)\n");
 		printf("3. mph (milhas por hora)\n");
-		printf("4. ft/s (pC)s por segundo)\n");
-		printf("Escolha uma opC'C#o: ");
+		printf("4. ft/s (pés por segundo)\n");
+		printf("Escolha uma opção: ");
 		scanf("%d", &outputUnit);
 
 		if (outputUnit < 1 || outputUnit > 4) {
-			printf("Unidade de saC-da invC!lida.\n");
+			printf("Unidade de saída inválida.\n");
 			continue;
 		}
 
-		result = convertSpeed(value, inputUnit, outputUnit);
-		printf("Resultado: %.2lf\n", result);
+		resultado = convertSpeed(value, inputUnit, outputUnit);
+		printf("Resultado: %.2lf\n", resultado);
 
-		printf("Deseja fazer outra conversC#o? (S/N): ");
+		printf("Deseja fazer outra conversãoo? (S/N): ");
 		scanf(" %c", &continueProgram);
 	} while (continueProgram == 'S' || continueProgram == 's');
 
-	printf("Programa encerrado. Obrigado por usar o Conversor de Velocidade!\n");
-	return 0;
+	//printf("Programa encerrado. Obrigado por usar o Conversor de Velocidade!\n");
+	return resultado;
 }

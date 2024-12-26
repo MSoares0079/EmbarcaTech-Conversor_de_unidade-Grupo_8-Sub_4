@@ -91,15 +91,17 @@ float temperatura() {
 
             case 7:
                 printf("Saindo do programa...\n");
+                exit(0);
                 break;
 
             default:
                 printf("Opção inválida!\n");
+                escolha = 0;
                 break;
-        }
+        } 
 
-    } while (escolha != 7); 
+    } while (escolha == 0); 
 
-    return 0;
+    return resultado;
 
 }

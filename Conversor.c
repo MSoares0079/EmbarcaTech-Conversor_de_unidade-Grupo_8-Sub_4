@@ -3,11 +3,23 @@
 #include <string.h>
 
 #include "funcoes/comprimento.c"
+#include "funcoes/massa.c"
+#include "funcoes/temperatura.c"
+#include "funcoes/ConversorDeVelocidade.c"
+#include "funcoes/potencia.c"
+#include "funcoes/area.c"
+#include "funcoes/conversorDeUnidades.c"
 #include "funcoes/tempo.c"
 
 void lista_conversao(){//Lista com todos os tipos de conversão de medidas realizadas pelo algoritmo
     printf("Selecione o tipo de conversão, escolha entre:");
     printf("\nComprimento \t(1)");
+    printf("\nMassa \t\t(2)");
+    printf("\nTemperatura \t(3)");
+    printf("\nVelocidade \t(4)");
+    printf("\nPotencia \t(5)");
+    printf("\nArea \t\t(6)");
+    printf("\nDados \t\t(7)");
     printf("\nTempo \t\t(8)");
     printf("\n");    
 }
@@ -26,6 +38,36 @@ int main(){
         if (strcmp(escolha_conversao,"COMPRIMENTO")==0 || strcmp(escolha_conversao,"1")==0)
         {
             valor_convertido=comprimento();
+            escolha_invalida = 0;
+        }
+        else if (strcmp(escolha_conversao,"MASSA")==0 || strcmp(escolha_conversao,"2")==0)
+        {
+            valor_convertido=massa();
+            escolha_invalida = 0;
+        }
+        else if (strcmp(escolha_conversao,"TEMPERATURA")==0 || strcmp(escolha_conversao,"3")==0)
+        {
+            valor_convertido = temperatura();
+            escolha_invalida = 0;
+        }
+        else if (strcmp(escolha_conversao,"VELOCIDADE")==0 || strcmp(escolha_conversao,"4")==0)
+        {
+            valor_convertido = velocidade();
+            escolha_invalida = 0;
+        }
+        else if (strcmp(escolha_conversao,"POTENCIA")==0 || strcmp(escolha_conversao,"5")==0)
+        {
+            valor_convertido = potencia();
+            escolha_invalida = 0;
+        }
+        else if (strcmp(escolha_conversao,"AREA")==0 || strcmp(escolha_conversao,"6")==0)
+        {
+            valor_convertido = area();
+            escolha_invalida = 0;
+        }
+        else if (strcmp(escolha_conversao,"DADOS")==0 || strcmp(escolha_conversao,"7")==0)
+        {
+            valor_convertido = conversao_BitsATerabyte();
             escolha_invalida = 0;
         }
         else if (strcmp(escolha_conversao,"TEMPO")==0 || strcmp(escolha_conversao,"8")==0)

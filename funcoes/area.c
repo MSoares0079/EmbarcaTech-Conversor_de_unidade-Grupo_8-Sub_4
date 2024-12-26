@@ -37,5 +37,5 @@ double area() {
             break;
     }
     
-    return 0;
+    return resultado;
 }
