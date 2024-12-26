@@ -48,7 +48,7 @@ float kelvinToFahrenheit(){
     return fahrenheit;
 }
 
-float executarConversao() {
+float temperatura() {
     int escolha;
     float resultado;
 
