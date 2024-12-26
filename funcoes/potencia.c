@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Função para realizar a conversão
-void conversao(float valor, int inicio, int final) {
+float conversao(float valor, int inicio, int final) {
     // Constantes de conversão
     const float W_para_KW = 0.001;         // 1 W = 0.001 kW
     const float W_para_HP = 0.00134102;   // 1 W = 0.00134102 HP
@@ -25,8 +25,7 @@ void conversao(float valor, int inicio, int final) {
             watts = valor / W_para_CV;
             break;
         default:
-            printf("Unidade de entrada inválida.\n");
-            return;
+            return -1; // Indica erro na unidade de entrada
     }
 
     // Converter de Watts para a unidade de saída
@@ -44,36 +43,13 @@ void conversao(float valor, int inicio, int final) {
             resultado = watts * W_para_CV;
             break;
         default:
-            printf("Unidade de saída inválida.\n");
-            return;
+            return -1; // Indica erro na unidade de saída
     }
 
-    printf("Resultado: %.6f\n", resultado);
+    return resultado;
 }
 
-// Função principal para conversão de potência
-void converterpotencia() {
-    float valor;
-    int inicio, final;
-
-    printf("Escolha a unidade de entrada:\n");
-    printf("1 - Watts (W)\n");
-    printf("2 - Kilowatts (kW)\n");
-    printf("3 - Horsepower (HP)\n");
-    printf("4 - Cavalos Vapor (CV)\n");
-    printf("Unidade de entrada: ");
-    scanf("%d", &inicio);
-
-    printf("Digite o valor: ");
-    scanf("%f", &valor);
-
-    printf("Escolha a unidade de saída:\n");
-    printf("1 - Watts (W)\n");
-    printf("2 - Kilowatts (kW)\n");
-    printf("3 - Horsepower (HP)\n");
-    printf("4 - Cavalos Vapor (CV)\n");
-    printf("Unidade de saída: ");
-    scanf("%d", &final);
-
-    conversao(valor, inicio, final);
+// Função principal de conversão de potência
+void converterpotencia(float *valorConvertido, float valor, int inicio, int final) {
+    *valorConvertido = conversao(valor, inicio, final);
 }
